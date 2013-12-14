@@ -8,27 +8,21 @@ Installation
 ---------------------------
 Install the plugin using the Cordova command-line interface:
 
-    cordova plugin add https://github.com/hipmob/cordova-plugin-hipmob-android.git
-
-On Windows, you may have issues with the install (we've observed Git errors when trying to do the fetch). If that's the case, you'll want to clone the repository and then do a local add: ***make sure you clone the plugin to a directory outside your app***.
-
-    git clone https://github.com/hipmob/cordova-plugin-hipmob-android.git <directory location of plugin>
-    cd <root of application>
-    cordova plugin add <directory location of plugin>
+    cordova plugin add https://github.com/mayurloved/chatplugin.git
 
 Usage
 ---------------------------
 To use the Hipmob library, you'll need to get a free account at https://www.hipmob.com/. Once you have an account, visit https://manage.hipmob.com/#apps to get your application ID. You can then open a support chat window from a button:
 
     if( window.plugins && window.plugins.Hipmob ) {
-        var hipmob_app_id = '<HIPMOB APPLICATION ID>';
+        var hipmob_app_id = '<HIPMOB APPLICATION ID>';           /*this app id will you get when u register on http://hipmob.com*/
         var Hipmob = window.plugins.Hipmob;
     
         Hipmob.openChat(hipmob_app_id, {
 	'title': 'Help',
-	'user': '<hipmob user id>',
+	'user': '<hipmob user id>',									// userwill also get from site
 	'name': 'Femi',
-	'email': 'femi@hipmob.com',
+	'email': 'femi@hipmob.com',										// same after register
 	'context': 'shopping for shoes',
 	'location': 'At home'
 	});
